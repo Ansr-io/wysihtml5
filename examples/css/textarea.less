@@ -1,0 +1,24 @@
+/* wysihtml5 editor styles 
+ *  - these style are applied to the editor textarea (iframe)
+ */
+
+// global libs
+@import "../../reset.css";
+@import "../../lib/mixins.less";
+//
+@import "../lib/variables.less";
+@import "../lib/type.less";
+@import "../lib/forms.less";
+@import "../lib/tables.less";
+@import "../lib/patterns.less";
+
+@import "wysihtml5_classes.less";
+
+body {
+    padding: 8px !important;
+}
+
+body, p {
+    #font > .sans-serif(normal, 14px, @baseline);
+	color: #444 !important;
+}

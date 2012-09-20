@@ -1,0 +1,88 @@
+/*
+ * styles used by wysihtml5 editor 
+ *  - include this on any page which contains content edited with wysihtml5
+ * 
+ */
+/*.wysiwyg-font-size-xx-small
+.wysiwyg-font-size-x-small*/
+.wysiwyg-font-size-smaller {
+  font-size: 12px !important;
+}
+.wysiwyg-font-size-small {
+  font-size: 14px;
+}
+.wysiwyg-font-size-large {
+  font-size: 18px;
+}
+.wysiwyg-font-size-larger {
+  font-size: 24px;
+}
+.wysiwyg-font-size-x-large {
+  font-size: 36px;
+}
+/*.wysiwyg-font-size-xx-large*/
+.wysiwyg-float-left {
+  float: left;
+  margin: 0.2em 1.5em 1em 0;
+}
+.wysiwyg-float-right {
+  float: right;
+  margin: 0.2em 0 1em 1.5em;
+}
+.wysiwyg-clear-both {
+  clear: both;
+}
+.wysiwyg-clear-left {
+  clear: left;
+}
+.wysiwyg-clear-right {
+  clear: right;
+}
+.wysiwyg-color-black {
+  color: black;
+}
+.wysiwyg-color-silver {
+  color: silver;
+}
+.wysiwyg-color-gray {
+  color: gray;
+}
+.wysiwyg-color-white {
+  color: white;
+}
+.wysiwyg-color-maroon {
+  color: maroon;
+}
+.wysiwyg-color-red {
+  color: red;
+}
+.wysiwyg-color-purple {
+  color: purple;
+}
+.wysiwyg-color-fuchsia {
+  color: fuchsia;
+}
+.wysiwyg-color-green {
+  color: green;
+}
+.wysiwyg-color-lime {
+  color: lime;
+}
+.wysiwyg-color-olive {
+  color: olive;
+}
+.wysiwyg-color-yellow {
+  color: yellow;
+}
+.wysiwyg-color-navy {
+  color: navy;
+}
+.wysiwyg-color-blue {
+  color: blue;
+}
+.wysiwyg-color-teal {
+  color: teal;
+}
+.wysiwyg-color-aqua {
+  color: aqua;
+}

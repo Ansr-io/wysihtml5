@@ -1,0 +1,130 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>WYSIHTML5</title>
+	<meta name="description" content="">
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+	<link rel="stylesheet" href="css/interface.css">
+	<link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+	<div id="header">
+		<h2>ondevice/wysihtml5 demo</h2>
+	</div>
+	
+	<div id="main" role="main">
+		
+		<div id="wysihtml5-editor-toolbar">
+			<header>
+	            <ul class="wysihtml5-commands">
+	                <li data-wysihtml5-command="bold" title="Make text bold (CTRL + B)" class="command"></li>
+	                <li data-wysihtml5-command="italic" title="Make text italic (CTRL + I)" class="command"></li>
+	                <li data-wysihtml5-command-group="fontSize" title="Color the selected text" class="command dropdown font-size">
+	                    <ul>
+	                        <li data-wysihtml5-command="fontSize" data-wysihtml5-command-value="smaller">smaller</li>
+	                        <li data-wysihtml5-command="fontSize" data-wysihtml5-command-value="small">small</li>
+	                        <li data-wysihtml5-command="fontSize" data-wysihtml5-command-value="large">large</li>
+	                        <li data-wysihtml5-command="fontSize" data-wysihtml5-command-value="larger">larger</li>
+	                        <li data-wysihtml5-command="fontSize" data-wysihtml5-command-value="x-large">x-large</li>
+	                    </ul>
+	                <li data-wysihtml5-command="insertUnorderedList" title="Insert an unordered list" class="command"></li>
+	                <li data-wysihtml5-command="insertOrderedList" title="Insert an ordered list" class="command"></li>
+	                <li data-wysihtml5-command="createLink"
+	                    data-popeye-command="createLink"
+	                    data-title="Insert a link"
+	                    title="Insert a link"
+	                    class="command createLink"></li>
+
+	                <li data-wysihtml5-command="insertImage" title="Insert an image" class="command"></li>
+	                <li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" title="Insert headline 1" class="command"></li>
+	                <li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" title="Insert headline 2" class="command"></li>
+	                <li data-wysihtml5-command-group="foreColor" title="Color the selected text" class="command dropdown fore-color">
+	                    <ul>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy"></li>
+	                        <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue"></li>
+	                    </ul>
+	                </li>
+	                <li data-wysihtml5-action="change_view" title="Show HTML" class="action"></li>
+	            </ul>
+	        </header>
+
+	        <div data-wysihtml5-dialog="createLink" style="display: none;">
+	            <div>
+	                <label>
+	                    Link:
+	                    <input data-wysihtml5-dialog-field="href" placeholder="http://" value="">
+	                </label>
+	                <label>
+	                    Text:
+	                    <input data-wysihtml5-dialog-field="text" placeholder="Link text" value="">
+	                </label>
+	            </div>
+
+	            <div class="btns">
+	                <a data-wysihtml5-dialog-action="save">OK</a>
+	                <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+	            </div>
+	        </div>
+
+	        <div data-wysihtml5-dialog="insertImage" style="display: none;">
+	            <div>
+	                <label>
+	                    Image:
+	                    <input data-wysihtml5-dialog-field="src" placeholder="http://" value="">
+	                </label>
+	            </div>
+
+	            <div>
+	                <label>
+	                    Align:
+	                    <select data-wysihtml5-dialog-field="className">
+	                        <option value="">default</option>
+	                        <option value="wysiwyg-float-left">left</option>
+	                        <option value="wysiwyg-float-right">right</option>
+	                    </select>
+	                </label>
+	            </div>
+
+	            <div class="btns">
+	                <a data-wysihtml5-dialog-action="save">OK</a>
+	                <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+	            </div>
+	        </div>
+	    </div><!-- end toolbar -->
+		
+        <div class="content">
+            <textarea name="" id="wysihtml5-content" cols="30" rows="10"></textarea>
+        </div>
+		
+	</div><!-- end #main -->
+	
+	<div id="footer">
+		
+	</div>
+	
+	<script src="../parser_rules/ondevice.js"></script>
+    <script src="../dist/wysihtml5-0.3.0.js"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+         var editor = new wysihtml5.Editor('wysihtml5-content', {
+            toolbar: "wysihtml5-editor-toolbar", // id of toolbar element
+            stylesheets: 'css/textarea.css',
+            parserRules: wysihtml5ParserRules // defined in parser rules
+        });
+    </script>
+</body>
+</html>

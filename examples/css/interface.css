@@ -1,0 +1,265 @@
+/*  wysihtml5 editor
+ *  - this is the stylesheet for the page CONTAINING the editor
+ *  - for editor textarea (iframe) styles see editor.less
+ * 
+ *  compiling this .less file will require latest version of less.js
+ *  npm install https://github.com/cloudhead/less.js/tarball/master -g
+ *  nb. at the time of writing HEAD is at bd8679b4c6e1e05d81c5b9c8a3f85d6fafde9ebe
+ */
+#wysihtml5-editor-toolbar {
+  position: relative;
+  z-index: 9999;
+  /*  section {
+      position: absolute;
+      width: 810px;
+      top: 139px;
+      bottom: 0;
+    }*/
+
+}
+#wysihtml5-editor-toolbar > header {
+  display: block;
+  border-radius: 4px;
+  width: 780px;
+  margin: 0 auto;
+  background: #eee;
+  position: relative;
+  z-index: inherit;
+  background-image: linear-gradient(bottom, #eeeeee 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(bottom, #eeeeee 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(bottom, #eeeeee 0%, #ffffff 100%);
+  background-image: -webkit-linear-gradient(bottom, #eeeeee 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(bottom, #eeeeee 0%, #ffffff 100%);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  font-size: 0;
+  text-align: center;
+}
+#wysihtml5-editor-toolbar ul {
+  padding: 0;
+}
+#wysihtml5-editor-toolbar ul li {
+  margin: 0;
+}
+ul.wysihtml5-commands {
+  border-left: 1px solid #ddd;
+  display: inline-block;
+}
+[data-wysihtml5-command],
+[data-wysihtml5-action],
+ul.wysihtml5-commands > li.dropdown {
+  position: relative;
+  z-index: 9999;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #fff;
+  list-style: none;
+  font-size: 12px;
+  display: inline-block;
+  cursor: pointer;
+  height: 40px;
+  width: 68px;
+}
+[data-wysihtml5-command]::after,
+[data-wysihtml5-action]::after,
+ul.wysihtml5-commands > li.dropdown::after {
+  content: "";
+  background-image: url(img/spr_toolbar_icons_r1.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+[data-wysihtml5-command]:hover,
+[data-wysihtml5-action]:hover,
+ul.wysihtml5-commands > li.dropdown:hover {
+  background-image: linear-gradient(bottom, #e5f0e2 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(bottom, #e5f0e2 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(bottom, #e5f0e2 0%, #ffffff 100%);
+  background-image: -webkit-linear-gradient(bottom, #e5f0e2 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(bottom, #e5f0e2 0%, #ffffff 100%);
+}
+[data-wysihtml5-command="bold"]::after {
+  background-position: 24px center;
+}
+[data-wysihtml5-command="italic"]::after {
+  background-position: -48px center;
+}
+ul.wysihtml5-commands > li.font-size::after {
+  background-image: url(img/font-size.png);
+  background-repeat: no-repeat;
+  background-position: 14px -2px;
+}
+[data-wysihtml5-command="insertUnorderedList"]::after {
+  background-position: -115px center;
+}
+[data-wysihtml5-command="insertOrderedList"]::after {
+  background-position: -197px center;
+}
+[data-wysihtml5-command="formatBlock"][data-wysihtml5-command-value="h1"]::after {
+  background-position: -344px center;
+}
+[data-wysihtml5-command="formatBlock"][data-wysihtml5-command-value="h2"]::after {
+  background-position: -428px center;
+}
+[data-wysihtml5-command="createLink"]::after {
+  background-position: -271px center;
+}
+[data-wysihtml5-command="insertImage"]::after {
+  background-position: -513px center;
+}
+.fore-color::after {
+  background-position: -741px center;
+}
+[data-wysihtml5-command="insertSpeech"]::after {
+  background-position: -596px center;
+}
+[data-wysihtml5-action="change_view"]::after {
+  background-position: -670px center;
+}
+.fore-color [data-wysihtml5-command-value="silver"] {
+  background: silver !important;
+}
+.fore-color [data-wysihtml5-command-value="gray"] {
+  background: gray !important;
+}
+.fore-color [data-wysihtml5-command-value="maroon"] {
+  background: maroon !important;
+}
+.fore-color [data-wysihtml5-command-value="red"] {
+  background: red !important;
+}
+.fore-color [data-wysihtml5-command-value="purple"] {
+  background: purple !important;
+}
+.fore-color [data-wysihtml5-command-value="green"] {
+  background: green !important;
+}
+.fore-color [data-wysihtml5-command-value="olive"] {
+  background: olive !important;
+}
+.fore-color [data-wysihtml5-command-value="navy"] {
+  background: navy !important;
+}
+.fore-color [data-wysihtml5-command-value="blue"] {
+  background: blue !important;
+}
+ul.wysihtml5-commands > li.dropdown ul {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  left: -34px;
+  width: 136px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+}
+ul.wysihtml5-commands > li.dropdown ul li {
+  display: block;
+  margin: 6px;
+  width: auto;
+  border: 4px solid #fff;
+  border-width: 2px 4px;
+  height: 15px;
+  padding: 4px;
+}
+ul.wysihtml5-commands > li.dropdown ul li::after {
+  display: none;
+}
+ul.wysihtml5-commands > li.dropdown:hover ul {
+  display: block;
+}
+ul.wysihtml5-commands > li.dropdown .wysihtml5-command-active {
+  border: 4px solid #999;
+  border-width: 2px 4px;
+}
+.wysihtml5-action-active,
+.wysihtml5-command-active {
+  box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.4);
+  background: #eee !important;
+}
+.wysihtml5-commands-disabled .command {
+  opacity: 0.4;
+  cursor: default;
+  background-image: none !important;
+}
+.wysihtml5-commands-disabled .command:hover > ul {
+  display: none;
+}
+[data-wysihtml5-dialog] {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 754px;
+  margin: 0 0 0 -377px;
+  padding: 5px 10px;
+  color: #333;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 4px;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background: #FFFBE0;
+}
+[data-wysihtml5-dialog] div {
+  float: left;
+  padding: 8px 0;
+}
+[data-wysihtml5-dialog] div > label {
+  width: auto;
+}
+[data-wysihtml5-dialog] div input {
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 3px;
+  width: 300px;
+}
+[data-wysihtml5-dialog] div input:focus {
+  outline: 0;
+  border: 1px solid #666;
+}
+[data-wysihtml5-dialog] div.btns {
+  float: right;
+  position: relative;
+  top: 6px;
+}
+[data-wysihtml5-dialog-action] {
+  padding: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+[data-wysihtml5-dialog-action="save"] {
+  background: #007200;
+}
+[data-wysihtml5-dialog-action="cancel"] {
+  background: #999;
+}
+#wysihtml5-content,
+.wysihtml5-sandbox {
+  display: block;
+  width: 775px !important;
+  min-height: 400px;
+  margin: 0 auto !important;
+  background: transparent;
+  resize: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  word-wrap: normal;
+  /*	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+}
+#wysihtml5-content:focus,
+.wysihtml5-sandbox:focus {
+  background: rgba(255, 255, 255, 0.5);
+  outline: 0;
+}
+[data-popeye-dialog] {
+  display: none;
+}
