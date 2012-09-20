@@ -9,13 +9,6 @@
 #wysihtml5-editor-toolbar {
   position: relative;
   z-index: 9999;
-  /*  section {
-      position: absolute;
-      width: 810px;
-      top: 139px;
-      bottom: 0;
-    }*/
-
 }
 #wysihtml5-editor-toolbar > header {
   display: block;
@@ -248,6 +241,7 @@ ul.wysihtml5-commands > li.dropdown .wysihtml5-command-active {
   resize: none;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  border-color: #ddd;
   word-wrap: normal;
   /*	-ms-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -259,7 +253,4 @@ ul.wysihtml5-commands > li.dropdown .wysihtml5-command-active {
 .wysihtml5-sandbox:focus {
   background: rgba(255, 255, 255, 0.5);
   outline: 0;
-}
-[data-popeye-dialog] {
-  display: none;
 }
