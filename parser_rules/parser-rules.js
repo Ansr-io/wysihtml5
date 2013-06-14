@@ -173,8 +173,18 @@ var wysihtml5ParserRules = {
         "dfn": {
             "rename_tag": "span"
         },
+//        "iframe": {
+//            "remove": 1
+//        },
         "iframe": {
-            "remove": 1
+            "check_attributes": {
+                "src":"src",
+                "width":"numbers",
+                "height":"numbers"
+            },
+            "set_attributes":{
+                "frameborder":"0"
+            }
         },
         "figcaption": {
             "rename_tag": "div"
