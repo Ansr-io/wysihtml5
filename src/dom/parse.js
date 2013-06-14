@@ -431,7 +431,8 @@ wysihtml5.dom.parse = (function() {
     align_img: (function() {
       var mapping = {
         left:   "wysiwyg-float-left",
-        right:  "wysiwyg-float-right"
+        right:  "wysiwyg-float-right",
+        center:  "wysiwyg-float-center"
       };
       return function(attributeValue) {
         return mapping[String(attributeValue).toLowerCase()];
