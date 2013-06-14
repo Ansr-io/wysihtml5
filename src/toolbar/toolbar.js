@@ -133,14 +133,12 @@
 
     execAction: function(action) {
       var editor = this.editor;
-      switch(action) {
-        case "change_view":
-          if (editor.currentView === editor.textarea) {
-            editor.fire("change_view", "composer");
-          } else {
-            editor.fire("change_view", "textarea");
-          }
-          break;
+      if (action === "change_view") {
+        if (editor.currentView === editor.textarea) {
+          editor.fire("change_view", "composer");
+        } else {
+          editor.fire("change_view", "textarea");
+        }
       }
     },
 
@@ -155,10 +153,14 @@
       for (; i<length; i++) {
         // 'javascript:;' and unselectable=on Needed for IE, but done in all browsers to make sure that all get the same css applied
         // (you know, a:link { ... } doesn't match anchors with missing href attribute)
-        dom.setAttributes({
-          href:         "javascript:;",
-          unselectable: "on"
-        }).on(links[i]);
+        if (links[i].nodeName === "A") {
+          dom.setAttributes({
+            href:         "javascript:;",
+            unselectable: "on"
+          }).on(links[i]);
+        } else {
+          dom.setAttributes({ unselectable: "on" }).on(links[i]);
+        }
       }
 
       // Needed for opera and chrome
@@ -207,8 +209,7 @@
     },
 
     _updateLinkStates: function() {
-      var element           = this.composer.element,
-          commandMapping    = this.commandMapping,
+      var commandMapping    = this.commandMapping,
           actionMapping     = this.actionMapping,
           i,
           state,
