@@ -59,6 +59,7 @@ var wysihtml5ParserRules = {
         "wysiwyg-color-yellow": 1,
         "wysiwyg-float-left": 1,
         "wysiwyg-float-right": 1,
+        "wysiwyg-float-center": 1,
         "wysiwyg-font-size-large": 1,
         "wysiwyg-font-size-larger": 1,
         "wysiwyg-font-size-medium": 1,
